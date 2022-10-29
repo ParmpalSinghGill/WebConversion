@@ -1,0 +1,16 @@
+<!doctype html>
+<title>Upload new File</title>
+<h1>Upload new File</h1>
+<form action='/upload' method="POST" enctype="multipart/form-data">
+    FileName <p><input type='text' name='filename' />
+    <p><input type='file' name='file' webkitdirectory directory multiple>
+    <input type='submit' value='Convert'>
+    </p>
+
+</form>
+
+{% if filelink %}
+    <h1> Ready to download {{filelink.split('/')[-1]}}</h1>
+    <h1><a href="{{filelink}}">PlayFile File</a></h1>
+    <h1><a href="/Download/{{filelink.split('/')[-1]}}">Download File</a></h1>
+{% endif %}
